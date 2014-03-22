@@ -19,14 +19,25 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
         if (cell) {
           self.addTile(cell);
           var seed = Math.log(cell.value) / Math.log(2);
+          
           if (seed > metadata.seed) {
+            // Update new target seed and replace html text
+            var oldString = seed - 1 + "-seeds:",
+                newString = seed + "-seeds:",
+                innerHTML = document.getElementById("intro").innerHTML,
+                newInnerHTML = innerHTML.replace(oldString, newString);
+            document.getElementById("intro").innerHTML = newInnerHTML;
+            
+            // Update target seed logos
+            for (var i = 1; i < 5; i++) {
+              team = "team" + i;
+              url = "img/" + seed + "/" + i + ".gif";
+              document.getElementById(team).src = url;
+            }
+
             metadata.seed = seed;
-            document.getElementById("team1").src = "img/" + seed + "/1.gif";
-            document.getElementById("team2").src = "img/" + seed + "/2.gif";
-            document.getElementById("team3").src = "img/" + seed + "/3.gif";
-            document.getElementById("team4").src = "img/" + seed + "/4.gif";
+            self.updateSeed(metadata.seed);
           }
-          self.updateSeed(metadata.seed);
         }
       });
     });
