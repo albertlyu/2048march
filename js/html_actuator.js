@@ -21,7 +21,11 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
           var seed = Math.log(cell.value) / Math.log(2);
           if (seed > metadata.seed) {
             metadata.seed = seed;
-          };
+            document.getElementById("team1").src = "img/" + seed + "/1.gif";
+            document.getElementById("team2").src = "img/" + seed + "/2.gif";
+            document.getElementById("team3").src = "img/" + seed + "/3.gif";
+            document.getElementById("team4").src = "img/" + seed + "/4.gif";
+          }
           self.updateSeed(metadata.seed);
         }
       });

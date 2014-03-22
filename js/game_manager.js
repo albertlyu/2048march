@@ -38,7 +38,7 @@ GameManager.prototype.setup = function () {
   this.grid        = new Grid(this.size);
 
   this.score       = 0;
-  this.seed        = 1;
+  this.seed        = 0;
   this.over        = false;
   this.won         = false;
   this.keepPlaying = false;

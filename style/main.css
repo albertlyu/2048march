@@ -125,6 +125,15 @@ hr {
   width: 500px;
   margin: 0 auto; }
 
+.seeds {
+  width: 500px;
+  margin: 0 auto; }
+
+.seeds img {
+  height: 100%;
+  width: 20%;
+}
+
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0; }
@@ -516,6 +525,15 @@ hr {
   .container {
     width: 280px;
     margin: 0 auto; }
+
+  .seeds {
+    width: 280px;
+    margin: 0 auto; }
+
+  .seeds img {
+    height: 100%;
+    width: 20%;
+  }
 
   .seed-container, .score-container, .best-container {
     margin-top: 0;
