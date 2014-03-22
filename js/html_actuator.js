@@ -18,9 +18,11 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
       column.forEach(function (cell) {
         if (cell) {
           self.addTile(cell);
-          //metadata.seed = metadata.seed + 1;
-          //console.log(metadata.seed);
-          //self.updateSeed(metadata.seed);
+          var seed = Math.log(cell.value) / Math.log(2);
+          if (seed > metadata.seed) {
+            metadata.seed = seed;
+          };
+          self.updateSeed(metadata.seed);
         }
       });
     });
@@ -73,7 +75,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  //inner.textContent = tile.value;
+  //inner.textContent = tile.value; // Removing tile.value from logos
   inner.style.backgroundImage = "url(" + imgUrl + ")";
 
   if (tile.previousPosition) {
@@ -150,6 +152,6 @@ HTMLActuator.prototype.clearMessage = function () {
   this.messageContainer.classList.remove("game-over");
 };
 
-//HTMLActuator.prototype.updateSeed = function (seed) {
-//  this.seedContainer.textContent = seed;
-//};
+HTMLActuator.prototype.updateSeed = function (seed) {
+  this.seedContainer.textContent = seed;
+};
