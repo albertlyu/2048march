@@ -22,10 +22,10 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
           
           if (seed > metadata.seed) {
             // Update new target seed and replace html text
-            var string = seed + "-seeds:",
+            var str = seed + "-seeds:",
                 innerHTML = document.getElementById("intro").innerHTML,
                 trimmedInnerHTML = innerHTML.substring(0, innerHTML.length - 8);
-            document.getElementById("intro").innerHTML = trimmedInnerHTML + string;
+            document.getElementById("intro").innerHTML = trimmedInnerHTML + str;
 
             // Update target seed logos
             for (var i = 1; i < 5; i++) {
