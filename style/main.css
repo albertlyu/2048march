@@ -156,7 +156,7 @@ hr {
     opacity: 1; } }
 
 .game-container {
-  margin-top: 40px;
+  margin-top: 10px;
   position: relative;
   padding: 15px;
   cursor: default;
@@ -544,7 +544,7 @@ hr {
     margin-bottom: 10px; }
 
   .game-container {
-    margin-top: 40px;
+    margin-top: 5px;
     position: relative;
     padding: 10px;
     cursor: default;
@@ -700,7 +700,7 @@ hr {
     transform: translate(202px, 202px); }
 
   .game-container {
-    margin-top: 20px; }
+    margin-top: 10px; }
 
   .tile .tile-inner {
     font-size: 35px; }
