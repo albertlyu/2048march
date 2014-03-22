@@ -22,12 +22,11 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
           
           if (seed > metadata.seed) {
             // Update new target seed and replace html text
-            var oldString = seed - 1 + "-seeds:",
-                newString = seed + "-seeds:",
+            var string = seed + "-seeds:",
                 innerHTML = document.getElementById("intro").innerHTML,
-                newInnerHTML = innerHTML.replace(oldString, newString);
-            document.getElementById("intro").innerHTML = newInnerHTML;
-            
+                trimmedInnerHTML = innerHTML.substring(0, innerHTML.length - 8);
+            document.getElementById("intro").innerHTML = trimmedInnerHTML + string;
+
             // Update target seed logos
             for (var i = 1; i < 5; i++) {
               team = "team" + i;
@@ -41,7 +40,6 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
         }
       });
     });
-
     self.updateScore(metadata.score);
     self.updateBestScore(metadata.bestScore);
 
